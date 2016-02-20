@@ -1,0 +1,23 @@
+{
+  "name": "fair-threads",
+  "version": "1.0.0",
+  "homepage": "https://github.com/SeanSassenrath/fairthreads",
+  "authors": [
+    "SeanSassenrath <sean.sassenrath@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.2",
+    "jquery": "~2.1.4"
+  }
+}
