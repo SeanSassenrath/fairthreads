@@ -1,4 +1,6 @@
 var gulp = require('gulp');
+// var sass = require('gulp-sass')
+
 
 var plugins = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'gulp.*', 'main-bower-files'],
@@ -18,14 +20,28 @@ gulp.task('scripts', function() {
       .pipe(gulp.dest(dest + 'js'));
 });
 
-gulp.task('css', function() {
-  var cssFiles = ['src/css/*'];
+//
+// gulp.task('sass', function() {
+//   gulp.src('src/**/*.scss')
+//
+//     .pipe(plugins.sass().on('error', sass.logError))
+//     .pipe(gulp.dest('build/css'));
+// })
 
-  gulp.src(plugins.mainBowerFiles().concat(cssFiles))
-      .pipe(plugins.filter('*.css'))
-      .pipe(plugins.concat('styles.css'))
-      .pipe(plugins.cssnano())
-      .pipe(gulp.dest(dest + 'css'));
+
+
+gulp.task('scss', function() {
+  var scssFiles = ['src/scss/*.scss', 'bower_components/foundation/scss/**/*.scss'];
+  gulp.src(scssFiles)
+  .pipe(plugins.sass())
+  .pipe(gulp.dest(dest + 'css'));
+
+  // gulp.src(plugins.mainBowerFiles().concat(scssFiles))
+  //     .pipe(plugins.sass().on('error', sass.logError))
+  //     .pipe(plugins.filter('*.scss'))
+  //     .pipe(plugins.concat('styles.css'))
+  //     .pipe(plugins.cssnano())
+  //     .pipe(gulp.dest(dest + 'css'));
 });
 
 gulp.task('watch', function() {
