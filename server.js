@@ -19,6 +19,8 @@ app.get('/', function(req, res) {
     res.render('index');
 });
 
+app.use(express.static(__dirname + '/www'));
+
 app.listen(port, function() {
     console.log('Our app is running on http://localhost:' + port);
 });
